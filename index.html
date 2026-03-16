@@ -103,7 +103,6 @@
             text-align: center;
             position: sticky;
             top: 70px;
-            height: 100vh; 
         }
 
         .problem { color: #FFD700; font-size: 1.2em; font-weight: bold; }
@@ -161,77 +160,71 @@
         
         <div id="q1" class="question-block">
             <h2>Example 1: Basic Substitution</h2>
-            <p class="problem">Evaluate the integral: &int; sin(x) cos(x) dx</p>
+            <p class="problem">&int; sin(x) cos(x) dx</p>
             <a href="#sol1" class="jump-button">Jump to Explanation 1</a>
         </div>
 
         <div id="q2" class="question-block">
             <h2>Example 2: Tangent and Secant</h2>
-            <p class="problem">Evaluate the integral: &int; tan(x) sec^2(x) dx</p>
+            <p class="problem">&int; tan(x) sec^2(x) dx</p>
             <a href="#sol2" class="jump-button">Jump to Explanation 2</a>
         </div>
 
         <div id="q3" class="question-block">
             <h2>Example 3: Higher Powers</h2>
-            <p class="problem">Evaluate the integral: &int; sin^3(x) cos(x) dx</p>
+            <p class="problem">&int; sin^3(x) cos(x) dx</p>
             <a href="#sol3" class="jump-button">Jump to Explanation 3</a>
         </div>
 
         <div id="q4" class="question-block">
             <h2>Example 4: Direct Rule</h2>
-            <p class="problem">Evaluate the integral: &int; sec(x) tan(x) dx</p>
+            <p class="problem">&int; sec(x) tan(x) dx</p>
             <a href="#sol4" class="jump-button">Jump to Explanation 4</a>
         </div>
 
         <div id="q5" class="question-block">
             <h2>Example 5: Negative Derivative</h2>
-            <p class="problem">Evaluate the integral: &int; cos^4(x) sin(x) dx</p>
+            <p class="problem">&int; cos^4(x) sin(x) dx</p>
             <a href="#sol5" class="jump-button">Jump to Explanation 5</a>
         </div>
 
         <div style="height: 400px; display: flex; align-items: center; justify-content: center; color: #555;">
-            <p>Scroll down or use the jump buttons for solutions &darr;</p>
+            <p>Scroll down or use the jump buttons for solutions ↓</p>
         </div> 
 
         <div id="sol1" class="explanation">
             <h3>Solution 1</h3>
             <p class="step">Step 1: Let u = sin(x)</p>
-            <p class="step">Step 2: Find the derivative. du = cos(x) dx</p>
-            <p class="step">Step 3: Substitute u and du: &int; u du</p>
-            <p class="step">Step 4: Integrate: (u^2) / 2 + C</p>
-            <p class="answer">Final Answer: (sin^2(x)) / 2 + C</p>
-            <a href="#q1" class="jump-button">Back to Question 1</a>
+            <p class="step">Step 2: du = cos(x) dx</p>
+            <p class="step">Step 3: Substitute → ∫ u du</p>
+            <p class="answer">Final Answer: (sin²(x)) / 2 + C</p>
         </div>
 
         <div id="sol2" class="explanation">
             <h3>Solution 2</h3>
-            <p class="step">Step 1: Let u = tan(x)</p>
-            <p class="step">Step 2: du = sec^2(x) dx</p>
-            <p class="answer">Final Answer: (tan^2(x)) / 2 + C</p>
-            <a href="#q2" class="jump-button">Back to Question 2</a>
+            <p class="step">Step 1: u = tan(x)</p>
+            <p class="step">Step 2: du = sec²(x) dx</p>
+            <p class="answer">Final Answer: (tan²(x)) / 2 + C</p>
         </div>
 
         <div id="sol3" class="explanation">
             <h3>Solution 3</h3>
-            <p class="step">Step 1: Let u = sin(x)</p>
-            <p class="step">Step 2: du = cos(x) dx</p>
-            <p class="answer">Final Answer: (sin^4(x)) / 4 + C</p>
-            <a href="#q3" class="jump-button">Back to Question 3</a>
+            <p class="step">u = sin(x)</p>
+            <p class="step">du = cos(x) dx</p>
+            <p class="answer">Final Answer: (sin⁴(x)) / 4 + C</p>
         </div>
 
         <div id="sol4" class="explanation">
             <h3>Solution 4</h3>
-            <p class="step">Step 1: Direct derivative of sec(x).</p>
+            <p class="step">Derivative of sec(x) is sec(x)tan(x)</p>
             <p class="answer">Final Answer: sec(x) + C</p>
-            <a href="#q4" class="jump-button">Back to Question 4</a>
         </div>
 
         <div id="sol5" class="explanation">
             <h3>Solution 5</h3>
-            <p class="step">Step 1: Let u = cos(x)</p>
-            <p class="step">Step 2: du = -sin(x) dx</p>
-            <p class="answer">Final Answer: -(cos^5(x)) / 5 + C</p>
-            <a href="#q5" class="jump-button">Back to Question 5</a>
+            <p class="step">u = cos(x)</p>
+            <p class="step">du = -sin(x) dx</p>
+            <p class="answer">Final Answer: -(cos⁵(x)) / 5 + C</p>
         </div>
 
     </div>
@@ -239,7 +232,7 @@
     <div class="right-column">
         <h1>Welcome to Calculus 2: Integrating Trigonometric Functions</h1>
         <p>It is important to remember the functions below, as we will use all of them for our Integration.</p>
-        <img src="images/functions.jpg" alt="trig functions" style="width:100%; max-width:500px; height:auto; border-radius: 10px;" title="Functions">
+        <img src="images/functions.jpg" alt="trig functions" style="width:100%; max-width:500px; height:auto; border-radius: 10px;">
     </div>
 </div>
 
