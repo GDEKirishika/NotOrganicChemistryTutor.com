@@ -7,11 +7,49 @@
     <link rel="icon" type="image/ico" href="images/favicon.ico">
     <style>
         body {
-            background: radial-gradient(circle at top right, #1a1a2e, #0f0f12);
-            color: #e0e0e0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
+            <div class="id-badge">
+    <span class="my-name">MATALOG, KIAN CARLO S></span>
+    <span class="my-number">25-01218</span>
+    </div>
+    background-image: url('images/bpsu-logo.png'), radial-gradient(circle at top right, #1a1a2e, #0f0f12);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 33.33% auto; /* Occupies 1/3 of horizontal space */
+    background-attachment: fixed;
+}
+
+/* 2. Floating Name and Student Number Badge */
+.id-badge {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3cm; /* Requested physical width */
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid #FFD700;
+    border-right: none;
+    padding: 15px 5px;
+    text-align: center;
+    border-radius: 10px 0 0 10px;
+    z-index: 9999;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    line-height: 1.4;
+}
+
+.id-badge .my-name {
+    color: #FFD700;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: block;
+    text-transform: uppercase;
+}
+
+.id-badge .my-number {
+    color: #00FFFF;
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 5px;
+}
         }
 
         html {
