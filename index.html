@@ -15,7 +15,7 @@
             min-height: 100vh;
         }
 
-        /* 1. Watermark Logo Layer */
+        /* 1. Watermark Logo (Left Side) */
         body::before {
             content: "";
             position: fixed;
@@ -27,12 +27,12 @@
             background-repeat: no-repeat;
             background-position: center;
             background-size: contain;
-            opacity: 0.1; /* Watermark transparency */
-            z-index: -1;   /* Keeps it behind the content */
+            opacity: 0.1; 
+            z-index: -1; 
             pointer-events: none;
         }
 
-        /* 2. Floating ID Badge */
+        /* 2. Floating ID Badge (Right Side) */
         .id-badge {
             position: fixed;
             right: 0;
@@ -47,103 +47,64 @@
             border-radius: 10px 0 0 10px;
             z-index: 9999;
         }
+        .id-badge .my-name { color: #FFD700; font-weight: bold; font-size: 0.7rem; display: block; text-transform: uppercase; }
+        .id-badge .my-number { color: #00FFFF; font-size: 0.8rem; display: block; margin-top: 5px; }
 
-        .id-badge .my-name {
-            color: #FFD700;
-            font-weight: bold;
-            font-size: 0.7rem;
-            display: block;
-            text-transform: uppercase;
-        }
-
-        .id-badge .my-number {
-            color: #00FFFF;
-            font-size: 0.8rem;
-            display: block;
-            margin-top: 5px;
-        }
-
+        /* --- Your Original Design Elements --- */
         html { scroll-behavior: smooth; }
-
-        nav {
-            background-color: rgba(0, 0, 0, 0.9);
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #333;
-        }
-
+        nav { background-color: rgba(0, 0, 0, 0.8); padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #333; }
         .nav-logo { font-weight: bold; color: #FFD700; font-size: 1.2rem; }
-
-        .cases-btn {
-            background: linear-gradient(45deg, #ff8c00, #FFD700);
-            color: black;
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.2s;
-        }
-
-        .container { display: flex; flex-wrap: wrap; position: relative; }
+        .cases-btn { background: linear-gradient(45deg, #ff8c00, #FFD700); color: black; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: bold; transition: 0.2s; }
+        
+        .container { display: flex; flex-wrap: wrap; }
         .left-column { flex: 1; padding: 30px; border-right: 2px solid #333; }
         .right-column { flex: 1.5; padding: 30px; text-align: center; position: sticky; top: 70px; height: 100vh; }
-
+        
         .problem { color: #FFD700; font-size: 1.2em; font-weight: bold; }
         .step { color: #00FFFF; }
         .answer { color: #39FF14; font-weight: bold; }
-        
         .question-block { margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px dashed #555; }
-        .explanation { background-color: rgba(17, 17, 17, 0.8); padding: 25px; border-left: 4px solid #00FFFF; margin-bottom: 50px; border-radius: 0 15px 15px 0; font-family: "Consolas", "Courier New", monospace; }
-        .jump-button { display: inline-block; background-color: #333; color: white; border: 1px solid #FFD700; padding: 8px 15px; margin-top: 10px; border-radius: 5px; text-decoration: none; }
-
-        footer { text-align: center; padding: 20px; border-top: 2px solid #333; width: 100%; clear: both; background: transparent; }
+        .explanation { background-color: #111; padding: 25px; border-left: 4px solid #00FFFF; margin-bottom: 50px; font-family: "Consolas", "Courier New", monospace; border-radius: 0 15px 15px 0; }
+        .jump-button { display: inline-block; background-color: #333; color: white; text-decoration: none; border: 1px solid #FFD700; padding: 8px 15px; margin-top: 10px; border-radius: 5px; }
+        footer { text-align: center; padding: 20px; border-top: 2px solid #333; width: 100%; }
     </style>
 </head>
 <body>
 
-    <div class="id-badge">
-        <span class="my-name">MATALOG, KIAN CARLO S.</span>
-        <span class="my-number">25-01218</span>
-    </div>
+<div class="id-badge">
+    <span class="my-name">MATALOG, KIAN CARLO S.</span>
+    <span class="my-number">25-01218</span>
+</div>
 
-    <nav>
-        <div class="nav-logo">NotOrganicChemistryTutor</div>
-        <a href="cases.html" class="cases-btn">Study Trigo Cases →</a>
-    </nav>
+<nav>
+    <div class="nav-logo">NotOrganicChemistryTutor</div>
+    <a href="cases.html" class="cases-btn">Study Trigo Cases →</a>
+</nav>
 
-    <div class="container">
-        <div class="left-column">
-            <div id="q1" class="question-block">
-                <h2>Example 1: Basic Substitution</h2>
-                <p class="problem">Evaluate the integral: &int; sin(x) cos(x) dx</p>
-                <a href="#sol1" class="jump-button">Jump to Explanation 1</a>
-            </div>
-            <div id="q2" class="question-block">
-                <h2>Example 2: Tangent and Secant</h2>
-                <p class="problem">Evaluate the integral: &int; tan(x) sec^2(x) dx</p>
-                <a href="#sol2" class="jump-button">Jump to Explanation 2</a>
-            </div>
-            <div id="sol1" class="explanation">
-                <h3>Solution 1</h3>
-                <p class="step">Step 1: Let u = sin(x)</p>
-                <p class="answer">Final Answer: (sin^2(x)) / 2 + C</p>
-                <a href="#q1" class="jump-button">Back to Question 1</a>
-            </div>
+<div class="container">
+    <div class="left-column">
+        <div id="q1" class="question-block">
+            <h2>Example 1: Basic Substitution</h2>
+            <p class="problem">Evaluate the integral: &int; sin(x) cos(x) dx</p>
+            <a href="#sol1" class="jump-button">Jump to Explanation 1</a>
         </div>
-
-        <div class="right-column">
-            <h1>Welcome to Calculus 2</h1>
-            <p>Integrating Trigonometric Functions</p>
-            <img src="images/functions.jpg" alt="trig functions" style="width:100%; max-width:500px; height:auto; border-radius: 10px;">
+        
+        <div id="sol1" class="explanation">
+            <h3>Solution 1</h3>
+            <p class="step">Step 1: Let u = sin(x)</p>
+            <p class="answer">Final Answer: (sin^2(x)) / 2 + C</p>
+            <a href="#q1" class="jump-button">Back to Question 1</a>
         </div>
     </div>
 
-    <footer>Thanks for Visiting my site!!</footer>
+    <div class="right-column">
+        <h1>Welcome to Calculus 2</h1>
+        <p>Integrating Trigonometric Functions</p>
+        <img src="images/functions.jpg" alt="trig functions" style="width:100%; max-width:500px; height:auto; border-radius: 10px;">
+    </div>
+</div>
+
+<footer>Thanks for Visiting my site!!</footer>
 
 </body>
 </html>
