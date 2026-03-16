@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NotOrganicChemistryTutor</title>
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+
     <style>
-        
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background: radial-gradient(circle at top right, #1a1a2e, #0f0f12);
             color: #e0e0e0;
@@ -14,20 +18,29 @@
             margin: 0;
             padding: 0;
         }
-.logo-bg {
-    position: fixed;
-    top: 50%;
-    left: 16.5%;
-    transform: translate(-50%, -50%);
-    width: 33.33%;
-    opacity: 0.06;
-    z-index: 0;
-}
-        html {
-            scroll-behavior: smooth;
+
+        .logo-bg {
+            position: fixed;
+            top: 50%;
+            left: 16.5%;
+            transform: translate(-50%, -50%);
+            width: 33.33%;
+            opacity: 0.06;
+            z-index: 0;
         }
 
-     
+        .student-info {
+            position: fixed;
+            top: 20px;
+            right: 3cm;
+            text-align: right;
+            font-family: Arial;
+            font-size: 36px;
+            color: gray;
+            opacity: 0.6;
+            z-index: 1001;
+        }
+
         nav {
             background-color: rgba(0, 0, 0, 0.8);
             padding: 15px 30px;
@@ -39,8 +52,12 @@
             z-index: 1000;
             border-bottom: 1px solid #333;
         }
-     <img src="images/BPSU_logo.png" class="logo-bg">
-        .nav-logo { font-weight: bold; color: #FFD700; font-size: 1.2rem; }
+
+        .nav-logo {
+            font-weight: bold;
+            color: #FFD700;
+            font-size: 1.2rem;
+        }
 
         .cases-btn {
             background: linear-gradient(45deg, #ff8c00, #FFD700);
@@ -52,12 +69,17 @@
             transition: 0.2s;
         }
 
-        .container { display: flex; flex-wrap: wrap; }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
 
         .left-column {
             flex: 1;
             padding: 30px;
-            border-right: 2px solid #333; /* Kept your border */
+            border-right: 2px solid #333;
         }
 
         .right-column {
@@ -65,14 +87,25 @@
             padding: 30px;
             text-align: center;
             position: sticky;
-            top: 70px; /* Adjusted for nav bar */
-            height: 100vh; 
+            top: 70px;
+            height: 100vh;
         }
 
-        .problem { color: #FFD700; font-size: 1.2em; font-weight: bold; }
-        .step { color: #00FFFF; }
-        .answer { color: #39FF14; font-weight: bold; }
-        
+        .problem {
+            color: #FFD700;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .step {
+            color: #00FFFF;
+        }
+
+        .answer {
+            color: #39FF14;
+            font-weight: bold;
+        }
+
         .question-block {
             margin-bottom: 40px;
             padding-bottom: 20px;
@@ -83,7 +116,7 @@
             background-color: #111;
             padding: 25px;
             border-left: 4px solid #00FFFF;
-            margin-bottom: 50px; 
+            margin-bottom: 50px;
             font-family: "Consolas", "Courier New", monospace;
             border-radius: 0 15px 15px 0;
         }
@@ -104,104 +137,97 @@
             padding: 20px;
             border-top: 2px solid #333;
             width: 100%;
+            position: relative;
+            z-index: 1;
         }
     </style>
 </head>
 <body>
 
-<nav>
-    <div class="nav-logo">NotOrganicChemistryTutor</div>
-    <a href="cases.html" class="cases-btn">Study Trigo Cases →</a>
-</nav>
+    <img src="images/BPSU_logo.png" class="logo-bg">
 
-<div class="container">
-    <div class="left-column">
-        
-        <div id="q1" class="question-block">
-            <h2>Example 1: Basic Substitution</h2>
-            <p class="problem">Evaluate the integral: &int; sin(x) cos(x) dx</p>
-            <a href="#sol1" class="jump-button">Jump to Explanation 1</a>
-        </div>
-
-        <div id="q2" class="question-block">
-            <h2>Example 2: Tangent and Secant</h2>
-            <p class="problem">Evaluate the integral: &int; tan(x) sec^2(x) dx</p>
-            <a href="#sol2" class="jump-button">Jump to Explanation 2</a>
-        </div>
-
-        <div id="q3" class="question-block">
-            <h2>Example 3: Higher Powers</h2>
-            <p class="problem">Evaluate the integral: &int; sin^3(x) cos(x) dx</p>
-            <a href="#sol3" class="jump-button">Jump to Explanation 3</a>
-        </div>
-
-        <div id="q4" class="question-block">
-            <h2>Example 4: Direct Rule</h2>
-            <p class="problem">Evaluate the integral: &int; sec(x) tan(x) dx</p>
-            <a href="#sol4" class="jump-button">Jump to Explanation 4</a>
-        </div>
-
-        <div id="q5" class="question-block">
-            <h2>Example 5: Negative Derivative</h2>
-            <p class="problem">Evaluate the integral: &int; cos^4(x) sin(x) dx</p>
-            <a href="#sol5" class="jump-button">Jump to Explanation 5</a>
-        </div>
-
-        <div style="height: 400px; display: flex; align-items: center; justify-content: center; color: #555;">
-            <p>Scroll down or use the jump buttons for solutions &darr;</p>
-        </div> 
-
-        <div id="sol1" class="explanation">
-            <h3>Solution 1</h3>
-            <p class="step">Step 1: Let u = sin(x)</p>
-            <p class="step">Step 2: Find the derivative. du = cos(x) dx</p>
-            <p class="step">Step 3: Substitute u and du: &int; u du</p>
-            <p class="step">Step 4: Integrate: (u^2) / 2 + C</p>
-            <p class="answer">Final Answer: (sin^2(x)) / 2 + C</p>
-            <a href="#q1" class="jump-button">Back to Question 1</a>
-        </div>
-
-        <div id="sol2" class="explanation">
-            <h3>Solution 2</h3>
-            <p class="step">Step 1: Let u = tan(x)</p>
-            <p class="step">Step 2: du = sec^2(x) dx</p>
-            <p class="answer">Final Answer: (tan^2(x)) / 2 + C</p>
-            <a href="#q2" class="jump-button">Back to Question 2</a>
-        </div>
-
-        <div id="sol3" class="explanation">
-            <h3>Solution 3</h3>
-            <p class="step">Step 1: Let u = sin(x)</p>
-            <p class="step">Step 2: du = cos(x) dx</p>
-            <p class="answer">Final Answer: (sin^4(x)) / 4 + C</p>
-            <a href="#q3" class="jump-button">Back to Question 3</a>
-        </div>
-
-        <div id="sol4" class="explanation">
-            <h3>Solution 4</h3>
-            <p class="step">Step 1: Direct derivative of sec(x).</p>
-            <p class="answer">Final Answer: sec(x) + C</p>
-            <a href="#q4" class="jump-button">Back to Question 4</a>
-        </div>
-
-        <div id="sol5" class="explanation">
-            <h3>Solution 5</h3>
-            <p class="step">Step 1: Let u = cos(x)</p>
-            <p class="step">Step 2: du = -sin(x) dx</p>
-            <p class="answer">Final Answer: -(cos^5(x)) / 5 + C</p>
-            <a href="#q5" class="jump-button">Back to Question 5</a>
-        </div>
-
+    <div class="student-info">
+        Kian Carlo S. Matalog<br>
+        25-01218
     </div>
 
-    <div class="right-column">
-        <h1>Welcome to Calculus 2: Integrating Trigonometric Functions</h1>
-        <p>It is important to remember the functions below, as we will use all of them for our Integration.</p>
-        <img src="images/functions.jpg" alt="trig functions" style="width:100%; max-width:500px; height:auto; border-radius: 10px;" title="Functions">
-    </div>
-</div>
+    <nav>
+        <div class="nav-logo">NotOrganicChemistryTutor</div>
+        <a href="cases.html" class="cases-btn">Study Trigo Cases →</a>
+    </nav>
 
-<footer>Thanks for Visiting my site!!</footer>
+    <div class="container">
+        <div class="left-column">
+
+            <div id="q1" class="question-block">
+                <h2>Example 1: Basic Substitution</h2>
+                <p class="problem">&int; sin(x) cos(x) dx</p>
+                <a href="#sol1" class="jump-button">Jump to Explanation 1</a>
+            </div>
+
+            <div id="q2" class="question-block">
+                <h2>Example 2: Tangent and Secant</h2>
+                <p class="problem">&int; tan(x) sec²(x) dx</p>
+                <a href="#sol2" class="jump-button">Jump to Explanation 2</a>
+            </div>
+
+            <div id="q3" class="question-block">
+                <h2>Example 3: Higher Powers</h2>
+                <p class="problem">&int; sin³(x) cos(x) dx</p>
+                <a href="#sol3" class="jump-button">Jump to Explanation 3</a>
+            </div>
+
+            <div id="q4" class="question-block">
+                <h2>Example 4: Direct Rule</h2>
+                <p class="problem">&int; sec(x) tan(x) dx</p>
+                <a href="#sol4" class="jump-button">Jump to Explanation 4</a>
+            </div>
+
+            <div id="q5" class="question-block">
+                <h2>Example 5: Negative Derivative</h2>
+                <p class="problem">&int; cos⁴(x) sin(x) dx</p>
+                <a href="#sol5" class="jump-button">Jump to Explanation 5</a>
+            </div>
+
+            <div style="height:400px; display:flex; align-items:center; justify-content:center; color:#555;">
+                <p>Scroll down or use jump buttons ↓</p>
+            </div>
+
+            <div id="sol1" class="explanation">
+                <h3>Solution 1</h3>
+                <p class="answer">(sin²(x))/2 + C</p>
+            </div>
+
+            <div id="sol2" class="explanation">
+                <h3>Solution 2</h3>
+                <p class="answer">(tan²(x))/2 + C</p>
+            </div>
+
+            <div id="sol3" class="explanation">
+                <h3>Solution 3</h3>
+                <p class="answer">(sin⁴(x))/4 + C</p>
+            </div>
+
+            <div id="sol4" class="explanation">
+                <h3>Solution 4</h3>
+                <p class="answer">sec(x) + C</p>
+            </div>
+
+            <div id="sol5" class="explanation">
+                <h3>Solution 5</h3>
+                <p class="answer">-(cos⁵(x))/5 + C</p>
+            </div>
+
+        </div>
+
+        <div class="right-column">
+            <h1>Welcome to Calculus 2: Integrating Trigonometric Functions</h1>
+            <p>It is important to remember the functions below.</p>
+            <img src="images/functions.jpg" alt="trig functions" style="width:100%; max-width:500px; border-radius:10px;">
+        </div>
+    </div>
+
+    <footer>Thanks for Visiting my site!!</footer>
 
 </body>
 </html>
