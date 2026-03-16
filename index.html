@@ -7,7 +7,7 @@
     <link rel="icon" type="image/ico" href="images/favicon.ico">
     <style>
         body {
-            /* Your Original Design */
+            /* Your Original Design Colors */
             background: radial-gradient(circle at top right, #1a1a2e, #0f0f12);
             color: #e0e0e0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -16,31 +16,31 @@
             min-height: 100vh;
         }
 
-        /* 1. WATERMARK LOGO (1/3 of screen, very transparent) */
+        /* Watermark Logo Layer */
         body::before {
             content: "";
             position: fixed;
             top: 0;
             left: 0;
-            width: 33.33%; 
+            width: 33.33%; /* Occupies 1/3 of the screen */
             height: 100%;
             background-image: url('images/BPSU_logo.png'); 
             background-repeat: no-repeat;
             background-position: center;
             background-size: contain;
-            opacity: 0.08; /* Low opacity for a watermark effect */
-            z-index: 0; 
-            pointer-events: none; /* Allows clicking through the logo */
+            opacity: 0.1; /* Watermark transparency */
+            z-index: -1;   /* Keeps it BEHIND the content */
+            pointer-events: none;
         }
 
-        /* 2. ID BADGE (Floating on the right side) */
+        /* Floating ID Badge */
         .id-badge {
             position: fixed;
             right: 0;
             top: 50%;
             transform: translateY(-50%);
             width: 3cm; 
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.85);
             border: 1px solid #FFD700;
             border-right: none;
             padding: 15px 5px;
@@ -64,12 +64,12 @@
             margin-top: 5px;
         }
 
-        /* Rest of your original CSS stays exactly the same */
+        /* --- Your Original Elements --- */
         html { scroll-behavior: smooth; }
         nav { background-color: rgba(0, 0, 0, 0.8); padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #333; }
         .nav-logo { font-weight: bold; color: #FFD700; font-size: 1.2rem; }
         .cases-btn { background: linear-gradient(45deg, #ff8c00, #FFD700); color: black; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: bold; transition: 0.2s; }
-        .container { display: flex; flex-wrap: wrap; position: relative; z-index: 1; }
+        .container { display: flex; flex-wrap: wrap; }
         .left-column { flex: 1; padding: 30px; border-right: 2px solid #333; }
         .right-column { flex: 1.5; padding: 30px; text-align: center; position: sticky; top: 70px; height: 100vh; }
         .problem { color: #FFD700; font-size: 1.2em; font-weight: bold; }
@@ -78,7 +78,7 @@
         .question-block { margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px dashed #555; }
         .explanation { background-color: #111; padding: 25px; border-left: 4px solid #00FFFF; margin-bottom: 50px; font-family: "Consolas", "Courier New", monospace; border-radius: 0 15px 15px 0; }
         .jump-button { display: inline-block; background-color: #333; color: white; text-decoration: none; border: 1px solid #FFD700; padding: 8px 15px; margin-top: 10px; border-radius: 5px; }
-        footer { text-align: center; padding: 20px; border-top: 2px solid #333; width: 100%; position: relative; z-index: 1; }
+        footer { text-align: center; padding: 20px; border-top: 2px solid #333; width: 100%; }
     </style>
 </head>
 <body>
@@ -170,46 +170,4 @@
 <footer>Thanks for Visiting my site!!</footer>
 
 </body>
-</html>        transform: translateY(-50%);
-        width: 3cm; 
-        background: rgba(0, 0, 0, 0.9);
-        border: 1px solid #FFD700;
-        border-right: none;
-        padding: 15px 5px;
-        text-align: center;
-        border-radius: 15px 0 0 15px;
-        z-index: 9999;
-        box-shadow: -5px 0 20px rgba(0,0,0,0.8);
-    }
-
-    .id-badge .my-name {
-        color: #FFD700;
-        font-weight: bold;
-        font-size: 0.7rem;
-        display: block;
-        text-transform: uppercase;
-    }
-
-    .id-badge .my-number {
-        color: #00FFFF;
-        font-size: 0.8rem;
-        display: block;
-        margin-top: 5px;
-    }
-
-    /* --- Your Original Layout Styles --- */
-    html { scroll-behavior: smooth; }
-    nav { background-color: rgba(0, 0, 0, 0.9); padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #333; }
-    .nav-logo { font-weight: bold; color: #FFD700; font-size: 1.2rem; }
-    .cases-btn { background: linear-gradient(45deg, #ff8c00, #FFD700); color: black; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: bold; transition: 0.2s; }
-    .container { display: flex; flex-wrap: wrap; }
-    .left-column { flex: 1; padding: 30px; border-right: 2px solid #333; }
-    .right-column { flex: 1.5; padding: 30px; text-align: center; position: sticky; top: 70px; height: 100vh; }
-    .problem { color: #FFD700; font-size: 1.2em; font-weight: bold; }
-    .step { color: #00FFFF; }
-    .answer { color: #39FF14; font-weight: bold; }
-    .question-block { margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px dashed #555; }
-    .explanation { background-color: rgba(17, 17, 17, 0.8); padding: 25px; border-left: 4px solid #00FFFF; margin-bottom: 50px; border-radius: 0 15px 15px 0; }
-    .jump-button { display: inline-block; background-color: #333; color: white; border: 1px solid #FFD700; padding: 8px 15px; margin-top: 10px; border-radius: 5px; text-decoration: none; }
-    footer { text-align: center; padding: 20px; border-top: 2px solid #333; width: 100%; }
-</style>
+</html>
