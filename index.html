@@ -74,11 +74,10 @@
         }
 
         .container {
-            display: flex;
-            flex-wrap: wrap;
-            position: relative;
-            z-index: 1;
-        }
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+}
 
         .left-column {
             flex: 1;
@@ -87,12 +86,13 @@
         }
 
         .right-column {
-            flex: 1.5;
-            padding: 30px;
-            text-align: center;
-            position: sticky;
-            top: 70px;
-        }
+    flex: 1.5;
+    padding: 30px;
+    text-align: center;
+    position: sticky;
+    top: 90px;
+    align-self: flex-start;
+}
 
         .problem {
             color: #FFD700;
