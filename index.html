@@ -165,55 +165,79 @@
     <div class="container">
         <div class="left-column">
 
-            <div id="sol1" class="explanation">
+        <div id="q1" class="question-block">
+    <h2>Example 1: Basic Substitution</h2>
+    <p class="problem">&int; sin(x) cos(x) dx</p>
+    <a href="#sol1" class="jump-button">Jump to Explanation 1</a>
+</div>
+
+<div id="q2" class="question-block">
+    <h2>Example 2: Tangent and Secant</h2>
+    <p class="problem">&int; tan(x) sec²(x) dx</p>
+    <a href="#sol2" class="jump-button">Jump to Explanation 2</a>
+</div>
+
+<div id="q3" class="question-block">
+    <h2>Example 3: Higher Powers</h2>
+    <p class="problem">&int; sin³(x) cos(x) dx</p>
+    <a href="#sol3" class="jump-button">Jump to Explanation 3</a>
+</div>
+
+<div id="q4" class="question-block">
+    <h2>Example 4: Direct Rule</h2>
+    <p class="problem">&int; sec(x) tan(x) dx</p>
+    <a href="#sol4" class="jump-button">Jump to Explanation 4</a>
+</div>
+
+<div id="q5" class="question-block">
+    <h2>Example 5: Negative Derivative</h2>
+    <p class="problem">&int; cos⁴(x) sin(x) dx</p>
+    <a href="#sol5" class="jump-button">Jump to Explanation 5</a>
+</div>
+
+<div style="height:400px; display:flex; align-items:center; justify-content:center; color:#555;">
+    <p>Scroll down or use jump buttons ↓</p>
+</div>
+
+<div id="sol1" class="explanation">
     <h3>Solution 1</h3>
-    <p class="step">∫ sin(x) cos(x) dx</p>
-    <p class="step">Let u = sin(x)</p>
-    <p class="step">du = cos(x) dx</p>
-    <p class="step">Substitute:</p>
-    <p class="step">∫ u du</p>
-    <p class="answer">(sin²(x))/2 + C</p>
+    <p class="answer">
+        Let u = sin(x), then du = cos(x) dx. Substituting gives ∫u du, which integrates to u²/2 + C.
+        Replacing u back with sin(x), the final answer is (sin²(x))/2 + C.
+    </p>
 </div>
 
 <div id="sol2" class="explanation">
     <h3>Solution 2</h3>
-    <p class="step">∫ tan(x) sec²(x) dx</p>
-    <p class="step">Let u = tan(x)</p>
-    <p class="step">du = sec²(x) dx</p>
-    <p class="step">Substitute:</p>
-    <p class="step">∫ u du</p>
-    <p class="answer">(tan²(x))/2 + C</p>
+    <p class="answer">
+        Let u = tan(x), then du = sec²(x) dx. Substituting gives ∫u du, which becomes u²/2 + C.
+        Replacing u back with tan(x), the answer is (tan²(x))/2 + C.
+    </p>
 </div>
 
 <div id="sol3" class="explanation">
     <h3>Solution 3</h3>
-    <p class="step">∫ sin³(x) cos(x) dx</p>
-    <p class="step">Let u = sin(x)</p>
-    <p class="step">du = cos(x) dx</p>
-    <p class="step">Rewrite:</p>
-    <p class="step">∫ u³ du</p>
-    <p class="answer">(sin⁴(x))/4 + C</p>
+    <p class="answer">
+        Let u = sin(x), then du = cos(x) dx. Substituting transforms the integral into ∫u³ du.
+        Integrating gives u⁴/4 + C, and replacing u with sin(x) gives (sin⁴(x))/4 + C.
+    </p>
 </div>
 
 <div id="sol4" class="explanation">
     <h3>Solution 4</h3>
-    <p class="step">∫ sec(x) tan(x) dx</p>
-    <p class="step">Recall derivative:</p>
-    <p class="step">d/dx [sec(x)] = sec(x)tan(x)</p>
-    <p class="step">Therefore:</p>
-    <p class="answer">sec(x) + C</p>
+    <p class="answer">
+        Since the derivative of sec(x) is sec(x)tan(x), this integral directly matches the derivative rule.
+        Therefore, the integral of sec(x)tan(x) is sec(x) + C.
+    </p>
 </div>
 
 <div id="sol5" class="explanation">
     <h3>Solution 5</h3>
-    <p class="step">∫ cos⁴(x) sin(x) dx</p>
-    <p class="step">Let u = cos(x)</p>
-    <p class="step">du = -sin(x) dx</p>
-    <p class="step">Rewrite:</p>
-    <p class="step">-∫ u⁴ du</p>
-    <p class="answer">-(cos⁵(x))/5 + C</p>
+    <p class="answer">
+        Let u = cos(x), then du = -sin(x) dx. Substituting changes the integral into -∫u⁴ du.
+        Integrating gives -u⁵/5 + C, and replacing u with cos(x) gives -(cos⁵(x))/5 + C.
+    </p>
 </div>
-
         </div>
 
         <div class="right-column">
