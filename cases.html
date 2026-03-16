@@ -5,205 +5,145 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trigo Cases - NotOrganicChemistryTutor</title>
     <link rel="icon" type="image/ico" href="images/favicon.ico">
-  <style>
-    body { 
-    <div class="id-badge">
-    <span class="my-name">MATALOG, KIAN CARLO S.</span>
-    <span class="my-number">25-01218</span>
-    </div>
-        background-color: #0f0f12; 
-        color: #e0e0e0; 
-        font-family: 'Segoe UI', Arial, sans-serif; 
-        margin: 0; 
-        padding: 0; 
-        position: relative;
-    }
+    <style>
+        body { 
+            background-color: #0f0f12; 
+            background-image: radial-gradient(circle at top right, #1a1a2e, #0f0f12);
+            background-attachment: fixed;
+            color: #e0e0e0; 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            position: relative;
+        }
 
-    body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 33.33%; 
-    height: 100%;
-    background-image: url('images/BPSU_logo.png'); 
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    opacity: 0.1; 
-    z-index: -1; 
-    pointer-events: none;
-}
+        /* 1. Watermark Logo Layer */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 33.33%; 
+            height: 100%;
+            background-image: url('images/BPSU_logo.png'); 
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            opacity: 0.1; /* Watermark transparency */
+            z-index: 0; 
+            pointer-events: none;
+        }
 
-  
-    .id-badge {
-        position: fixed;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 3cm; 
-        background: rgba(0, 0, 0, 0.9);
-        border: 1px solid #FFD700;
-        border-right: none;
-        padding: 15px 5px;
-        text-align: center;
-        border-radius: 10px 0 0 10px;
-        z-index: 9999;
-    }
+        /* 2. Floating ID Badge */
+        .id-badge {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3cm; 
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid #FFD700;
+            border-right: none;
+            padding: 15px 5px;
+            text-align: center;
+            border-radius: 10px 0 0 10px;
+            z-index: 9999;
+        }
 
-    .id-badge .my-name {
-        color: #FFD700;
-        font-weight: bold;
-        font-size: 0.7rem;
-        display: block;
-        text-transform: uppercase;
-    }
+        .id-badge .my-name {
+            color: #FFD700;
+            font-weight: bold;
+            font-size: 0.7rem;
+            display: block;
+            text-transform: uppercase;
+        }
 
-    .id-badge .my-number {
-        color: #00FFFF;
-        font-size: 0.8rem;
-        display: block;
-        margin-top: 5px;
-    }
+        .id-badge .my-number {
+            color: #00FFFF;
+            font-size: 0.8rem;
+            display: block;
+            margin-top: 5px;
+        }
 
-   
-    header { 
-        background: #16213e; 
-        padding: 20px; 
-        text-align: center; 
-        border-bottom: 2px solid #FFD700; 
-        position: relative;
-        z-index: 2;
-    }
+        header { 
+            background: #16213e; 
+            padding: 20px; 
+            text-align: center; 
+            border-bottom: 2px solid #FFD700; 
+            position: relative;
+            z-index: 2;
+        }
 
-    .container { 
-        display: flex; 
-        flex-wrap: wrap; 
-        min-height: 100vh; 
-        position: relative;
-        z-index: 1;
-    }
-    
-    .solving-column { 
-    flex: 2; 
-    padding: 40px; 
-    background: transparent;
+        .container { 
+            display: flex; 
+            flex-wrap: wrap; 
+            min-height: 100vh; 
+            position: relative;
+            z-index: 1;
+        }
         
-}
-    .solution-card { background: #16161d; border-radius: 15px; padding: 25px; margin-bottom: 50px; border: 1px solid #222; }
-    .math-block { font-family: "Consolas", monospace; background: #000; padding: 15px; border-radius: 10px; color: #39FF14; line-height: 1.6; border-left: 4px solid #FFD700; }
-    
-    .cases-column { flex: 1; padding: 20px; background: #1a1a20; border-left: 2px solid #333; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
-    .mini-case-box { background: rgba(255, 255, 255, 0.05); padding: 12px; border-radius: 8px; margin-bottom: 15px; font-size: 0.8em; border-left: 3px solid #00FFFF; }
-    .group-tag { color: #FFD700; font-weight: bold; display: block; margin-bottom: 10px; text-decoration: underline; }
-    .formula { color: #00FFFF; }
-    .back-btn { color: #FFD700; text-decoration: none; border: 1px solid #FFD700; padding: 5px 10px; border-radius: 5px; }
-    .case-badge { background: #FFD700; color: black; padding: 2px 6px; border-radius: 4px; font-weight: bold; margin-right: 8px; font-size: 0.75em; }
+        .solving-column { 
+            flex: 2; 
+            padding: 40px; 
+            background: transparent; /* Allows logo to be seen */
+        }
 
-    @media (max-width: 900px) {.cases-column { 
-    flex: 1; 
-    padding: 20px; 
-    background: rgba(26, 26, 32, 0.8); /* 0.8 makes it slightly transparent */
-    border-left: 2px solid #333; 
-    position: sticky; 
-    top: 0; 
-    height: 100vh; 
-    overflow-y: auto;}}
-</style>
+        .solution-card { background: #16161d; border-radius: 15px; padding: 25px; margin-bottom: 50px; border: 1px solid #222; }
+        .math-block { font-family: "Consolas", monospace; background: #000; padding: 15px; border-radius: 10px; color: #39FF14; line-height: 1.6; border-left: 4px solid #FFD700; }
+        
+        .cases-column { 
+            flex: 1; 
+            padding: 20px; 
+            background: rgba(26, 26, 32, 0.9); /* Transparent dark background */
+            border-left: 2px solid #333; 
+            position: sticky; 
+            top: 0; 
+            height: 100vh; 
+            overflow-y: auto; 
+        }
 
+        .mini-case-box { background: rgba(255, 255, 255, 0.05); padding: 12px; border-radius: 8px; margin-bottom: 15px; font-size: 0.8em; border-left: 3px solid #00FFFF; }
+        .group-tag { color: #FFD700; font-weight: bold; display: block; margin-bottom: 10px; text-decoration: underline; }
+        .formula { color: #00FFFF; }
+        .back-btn { color: #FFD700; text-decoration: none; border: 1px solid #FFD700; padding: 5px 10px; border-radius: 5px; }
+        .case-badge { background: #FFD700; color: black; padding: 2px 6px; border-radius: 4px; font-weight: bold; margin-right: 8px; font-size: 0.75em; }
+
+        @media (max-width: 900px) { .cases-column { position: relative; height: auto; border-left: none; } }
+    </style>
 </head>
 <body>
 
-<header>
-    <a href="index.html" class="back-btn">← Back to Practice</a>
-    <h1>Trigonometric Integration Roadmap</h1>
-</header>
-
-<div class="container">
-    
-    <div class="solving-column">
-        <div class="solution-card">
-            <h2><span class="case-badge">CASE 1</span>Sin/Cos ODD</h2>
-            <p>Example: <strong>&int; sin³(x) dx</strong></p>
-            <div class="math-block">
-                &int; (1 - cos²x) sin(x) dx <br>
-                u = cos(x), du = -sin(x) dx <br>
-                <strong>Ans: -cos(x) + cos³(x)/3 + C</strong>
-            </div>
-        </div>
-
-        <div class="solution-card">
-            <h2><span class="case-badge">CASE 2</span>Sin/Cos EVEN</h2>
-            <p>Example: <strong>&int; cos²(x) dx</strong></p>
-            <div class="math-block">
-                &int; (1 + cos 2x)/2 dx <br>
-                <strong>Ans: x/2 + sin(2x)/4 + C</strong>
-            </div>
-        </div>
-
-        <div class="solution-card">
-            <h2><span class="case-badge">CASE 1 (Sec/Tan)</span>Sec/Csc EVEN</h2>
-            <p>Example: <strong>&int; sec⁴(x) dx</strong></p>
-            <div class="math-block">
-                Isolate sec²x: &int; (1 + tan²x) sec²x dx <br>
-                u = tan(x), du = sec²x dx <br>
-                <strong>Ans: tan(x) + tan³(x)/3 + C</strong>
-            </div>
-        </div>
-
-        <div class="solution-card">
-            <h2><span class="case-badge">SPECIAL</span>Product-to-Sum (sin cos, sin sin, cos cos)</h2>
-            <p>Example: <strong>&int; sin(5x)sin(3x) dx</strong></p>
-            <div class="math-block">
-                Use: ½[cos(A-B) - cos(A+B)] <br>
-                ½ &int; (cos 2x - cos 8x) dx <br>
-                <strong>Ans: sin(2x)/4 - sin(8x)/16 + C</strong>
-            </div>
-        </div>
-        
-        </div>
-
-    <div class="cases-column">
-        <span class="group-tag">Powers of SIN & COS</span>
-        <div class="mini-case-box">
-            <strong>Case 1:</strong> sin or cos ODD <br>
-            <span class="formula">sin²x=1-cos²x | cos²x=1-sin²x</span>
-        </div>
-        <div class="mini-case-box">
-            <strong>Case 2:</strong> sin/cos EVEN <br>
-            <span class="formula">sin²x=(1-cos2x)/2 | cos²x=(1+cos2x)/2</span>
-        </div>
-        <div class="mini-case-box">
-            <strong>Case 3:</strong> sin/cos ODD (Combined) <br>
-            Save the smaller power and substitute.
-        </div>
-        <div class="mini-case-box">
-            <strong>Case 4:</strong> sin/cos EVEN (Combined) <br>
-            Apply power-reducing to both.
-        </div>
-
-        <span class="group-tag">Powers of SEC & TAN</span>
-        <div class="mini-case-box">
-            <strong>Case 1:</strong> sec or csc EVEN <br>
-            <span class="formula">sec²x = 1 + tan²x</span>
-        </div>
-        <div class="mini-case-box">
-            <strong>Case 2:</strong> tan or cot isolate <br>
-            Isolate one factor to use u-sub.
-        </div>
-        <div class="mini-case-box">
-            <strong>Case 3:</strong> Sec/Tan isolate sec² <br>
-            Identify du = sec²x.
-        </div>
-
-        <span class="group-tag">SPECIAL CASES</span>
-        <div class="mini-case-box">
-            <strong>Product-to-Sum:</strong> <br>
-            sinAcosB, sinAsinB, cosAcosB <br>
-            <span class="formula">Use different angle identities</span>
-        </div>
+    <div class="id-badge">
+        <span class="my-name">MATALOG, KIAN CARLO S.</span>
+        <span class="my-number">25-01218</span>
     </div>
-</div>
+
+    <header>
+        <a href="index.html" class="back-btn">← Back to Practice</a>
+        <h1>Trigonometric Integration Roadmap</h1>
+    </header>
+
+    <div class="container">
+        <div class="solving-column">
+            <div class="solution-card">
+                <h2><span class="case-badge">CASE 1</span>Sin/Cos ODD</h2>
+                <p>Example: <strong>&int; sin³(x) dx</strong></p>
+                <div class="math-block">
+                    &int; (1 - cos²x) sin(x) dx <br>
+                    u = cos(x), du = -sin(x) dx <br>
+                    <strong>Ans: -cos(x) + cos³(x)/3 + C</strong>
+                </div>
+            </div>
+            </div>
+
+        <div class="cases-column">
+            <span class="group-tag">Powers of SIN & COS</span>
+            <div class="mini-case-box">
+                <strong>Case 1:</strong> sin or cos ODD <br>
+                <span class="formula">sin²x=1-cos²x | cos²x=1-sin²x</span>
+            </div>
+            </div>
+    </div>
 
 </body>
 </html>
