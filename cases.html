@@ -7,15 +7,32 @@
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
     <style>
         body { background-color: #0f0f12; color: #e0e0e0; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; }
+        .logo-bg {
+            position: fixed;
+            top: 50%;
+            left: 16.5%;
+            transform: translate(-50%, -50%);
+            width: 33.33%;
+            opacity: 0.06;
+            z-index: 0;
+        }
+
+        .student-info {
+            position: fixed;
+            top: 20px;
+            right: 3cm;
+            text-align: right;
+            font-family: Arial;
+            font-size: 36px;
+            color: gray;
+            opacity: 0.6;
+            z-index: 1001;
+        }
         header { background: #16213e; padding: 20px; text-align: center; border-bottom: 2px solid #FFD700; }
         .container { display: flex; flex-wrap: wrap; min-height: 100vh; }
-        
-        /* LEFT: SOLUTIONS */
         .solving-column { flex: 2; padding: 40px; background: #0f0f12; }
         .solution-card { background: #16161d; border-radius: 15px; padding: 25px; margin-bottom: 50px; border: 1px solid #222; }
         .math-block { font-family: "Consolas", monospace; background: #000; padding: 15px; border-radius: 10px; color: #39FF14; line-height: 1.6; border-left: 4px solid #FFD700; }
-        
-        /* RIGHT: CHEAT SHEET */
         .cases-column { flex: 1; padding: 20px; background: #1a1a20; border-left: 2px solid #333; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
         .mini-case-box { background: rgba(255, 255, 255, 0.05); padding: 12px; border-radius: 8px; margin-bottom: 15px; font-size: 0.8em; border-left: 3px solid #00FFFF; }
         .group-tag { color: #FFD700; font-weight: bold; display: block; margin-bottom: 10px; text-decoration: underline; }
@@ -27,6 +44,12 @@
     </style>
 </head>
 <body>
+ <img src="images/BPSU_logo.png" class="logo-bg">
+
+    <div class="student-info">
+        Kian Carlo S. Matalog<br>
+        25-01218
+    </div>
 
 <header>
     <a href="index.html" class="back-btn">← Back to Practice</a>
