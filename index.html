@@ -14,12 +14,20 @@
             margin: 0;
             padding: 0;
         }
-
+.logo-bg {
+    position: fixed;
+    top: 50%;
+    left: 16.5%;
+    transform: translate(-50%, -50%);
+    width: 33.33%;
+    opacity: 0.06;
+    z-index: 0;
+}
         html {
             scroll-behavior: smooth;
         }
 
-        /* Nav Bar */
+     
         nav {
             background-color: rgba(0, 0, 0, 0.8);
             padding: 15px 30px;
@@ -31,7 +39,7 @@
             z-index: 1000;
             border-bottom: 1px solid #333;
         }
-
+     <img src="images/BPSU_logo.png" class="logo-bg">
         .nav-logo { font-weight: bold; color: #FFD700; font-size: 1.2rem; }
 
         .cases-btn {
